@@ -1,5 +1,5 @@
 import React from 'react';
-import productService from '../Services/productService';
+import {post} from '../Services/productService';
 
 class Producto extends React.Component{
     constructor(props) {
@@ -49,7 +49,7 @@ class Producto extends React.Component{
             image: this.state.image
         }  
         console.log(data.image);
-        productService.post(data).then(res=>
+        post(data).then(res=>
         {
             
             const { from } = this.props.location.state || { from: { pathname: "/" } };
